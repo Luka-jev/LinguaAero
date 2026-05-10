@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaAero - Apprendre les langues</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-decorations">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">LinguaAero</div>
+            <div class="nav-controls">
+                <select id="language-select" class="glossy-select">
+                    <option value="italien">🇮🇹 Italien</option>
+                    <option value="portugais">🇵🇹 Portugais</option>
+                    <option value="turc">🇹🇷 Turc</option>
+                    <option value="espagnol">🇪🇸 Espagnol</option>
+                </select>
+                <select id="level-select" class="glossy-select">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                </select>
+            </div>
+            <div class="nav-links">
+                <button data-view="quiz" class="nav-btn glossy-btn active">Quiz</button>
+                <button data-view="history" class="nav-btn glossy-btn">Historique</button>
+                <button data-view="stats" class="nav-btn glossy-btn">Stats</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <!-- Section Quiz -->
+        <section id="quiz-view" class="view">
+            <div class="quiz-card glass-card">
+                <div class="question-header">
+                    <span id="current-language-label">Italien</span> - <span id="current-level-label">A1</span>
+                </div>
+                <h2 id="question-word">Buongiorno</h2>
+                <div id="options-container" class="options-grid">
+                    <!-- Les options seront injectées ici -->
+                </div>
+                <div id="feedback-container" class="feedback hidden">
+                    <p id="feedback-message"></p>
+                    <button id="next-btn" class="glossy-btn">Question suivante</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Historique -->
+        <section id="history-view" class="view hidden">
+            <div class="glass-card">
+                <h2>Historique</h2>
+                <div class="history-filters">
+                    <select id="filter-lang" class="glossy-select small">
+                        <option value="all">Toutes les langues</option>
+                        <option value="italien">Italien</option>
+                        <option value="portugais">Portugais</option>
+                        <option value="turc">Turc</option>
+                        <option value="espagnol">Espagnol</option>
+                    </select>
+                    <select id="filter-level" class="glossy-select small">
+                        <option value="all">Tous les niveaux</option>
+                        <option value="A1">A1</option>
+                        <option value="A2">A2</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="C1">C1</option>
+                    </select>
+                    <button id="clear-history-btn" class="glossy-btn danger small">Effacer l'historique</button>
+                    <button id="reset-all-btn" class="glossy-btn danger small">Réinitialiser tout</button>
+                </div>
+                <div class="table-container">
+                    <table id="history-table">
+                        <thead>
+                            <tr>
+                                <th>Mot (Langue)</th>
+                                <br>
+                                <th>Traduction Correcte</th>
+                                <th>Résultat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body">
+                            <!-- Les lignes d'historique seront injectées ici -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Statistiques -->
+        <section id="stats-view" class="view hidden">
+            <div class="glass-card">
+                <h2>Mes Statistiques</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Questions</span>
+                        <span id="total-questions" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Bonnes Réponses</span>
+                        <span id="correct-answers" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Série actuelle</span>
+                        <span id="current-streak" class="stat-value">0</span>
+                    </div>
+                </div>
+                <div id="language-progress" class="progress-container">
+                    <!-- Barres de progression par langue seront injectées ici -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+tml>
